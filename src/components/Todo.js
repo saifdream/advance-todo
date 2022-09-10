@@ -3,7 +3,7 @@ import useToggle from "./../hooks/useToggle";
 import editImage from "../assets/images/edit.png";
 import checkMarkImage from "../assets/images/check-mark.png";
 import cancelImage from "../assets/images/cancel.png";
-import {useAddTodoMutation, useRemoveTodoMutation, useUpdateTodoMutation} from "../features/api/apiSlice";
+import {useRemoveTodoMutation, useUpdateTodoMutation} from "../features/api/apiSlice";
 import Loading from "./Loading";
 
 export default function Todo({ todo }) {
