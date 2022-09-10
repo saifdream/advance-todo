@@ -8,7 +8,7 @@ export default function TodoList() {
     const { status, colors } = filters;
 
     let queryStr = '';
-    if(status) queryStr = `completed=${(status === 'Complete')}&`;
+    if(status) queryStr = queryStr += `completed=${(status === 'Complete')}&`;
     if(colors.length) {
         const colorsQuery = colors.map(color => `color=${color}`).join('&')
         queryStr += colorsQuery;
@@ -16,7 +16,7 @@ export default function TodoList() {
 
     if(queryStr) queryStr = `?${queryStr}`;
 
-    const { data: todos, isLoading, isError } = useGetTodosQuery(queryStr, {
+    const { data: todos, isLoading, isError } = useGetTodosQuery(queryStr || undefined, {
         refetchOnMountOrArgChange: true,
     });
 
